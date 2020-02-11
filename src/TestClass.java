@@ -2,14 +2,18 @@ import java.util.*;
 
 
 public class TestClass {
+    private static final int EMPLOYED_VALUE = 1;
+    private static final int SELF_EMPLOYED_VALUE = 2;
+    private static final int RESTART_VALUE = 1;
+    private static final int QUIT_VALUE = 2;
     public static void main(String[] args) {
-        int choice;
+        int restartChoice;
         do {
             Scanner read = new Scanner(System.in);
             //name input section
             System.out.println("Enter your first and last names");
             String name = read.nextLine();
-            nameMethod(name);
+            printFirstName(name);
 
             //age input section
             System.out.println("Enter your age");
@@ -18,46 +22,46 @@ public class TestClass {
 
             //proffesion input section
             do {
-                System.out.println("Are you Self employed or employed?\nEnter 1 for employed and 2 for self employed");
+                System.out.println("Are you Self employed or employed?\nEnter " +EMPLOYED_VALUE+" for employed and " +SELF_EMPLOYED_VALUE+" for self employed");
                 ans = read.nextInt();
-            } while (profession(ans) == "again");
-            String prof = profession(ans);
+            } while (getProfession(ans).equals("again"));
+            String prof = getProfession(ans);
 
             System.out.println("Alright got it");
             System.out.println("Scanning....");
 
             //waiting for 5 seconds
-            timeWait();
+            waitFor5Secs();
             //information output
             System.out.println("To recap, your name is " + name + ", you are " + age + " years old and you are " + prof);
 
 
             do {
-                System.out.println("Restart or Quit? \nEnter 1 to Restart and 2 to Quit");
-                choice = read.nextInt();
-                if (choice != 1 && choice != 2)
+                System.out.println("Restart or Quit? \nEnter " +RESTART_VALUE+ " to Restart and "  +QUIT_VALUE+ " to Quit");
+                restartChoice = read.nextInt();
+                if (restartChoice != RESTART_VALUE && restartChoice != QUIT_VALUE)
                     System.out.println("Invalid input, try again");
 
-            } while (choice != 1 && choice != 2);
-        } while (choice == 1);
+            } while (restartChoice != 1 && restartChoice != 2);
+        } while (restartChoice == 1);
         System.out.println("Good bye");
     }
     
     //5 seconds delay method
-    private static void timeWait() {
+    private static void waitFor5Secs() {
         try {
             Thread.sleep(5000);
 
-        } catch (Exception e) {
-            System.out.println(e);
+        } catch (Exception errorMessage) {
+            System.out.println(errorMessage);
         }
     }
 
     //profession method
-    private static String profession(int p) {
-        if (p == 1) {
+    private static String getProfession(int professionInput) {
+        if (professionInput == EMPLOYED_VALUE) {
             return "employed";
-        } else if (p == 2) {
+        } else if (professionInput == SELF_EMPLOYED_VALUE) {
             return "Self employed";
         } else
             System.out.println("Invalid input try again");
@@ -65,15 +69,12 @@ public class TestClass {
     }
 
     //name method
-    private static void nameMethod(String n) {
-/*        The following two lines of code is one way to print only the first name entered
-        Scanner firstN = new Scanner(n);
-        System.out.println("Welcome " + firstN.next());
-*/
-        String[] nameArray = n.split(" ");
+    private static void printFirstName(String enteredName) {
+
+        String[] nameArray = enteredName.split(" ");
         System.out.println("Welcome " + nameArray[0]);
 
     }
 
-    ;
+
 }
