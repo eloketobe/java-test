@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f1fbb569-eb05-4fc3-8a93-18e97013a259" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Xbondo7weee0YXMFBvay3dwpJU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager">
+    <configuration name="TestApp" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="TestClass" />
+      <module name="TestProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1fbb569-eb05-4fc3-8a93-18e97013a259" name="Default Changelist" comment="" />
+      <created>1581324328198</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581324328198</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="274" y="43" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581325564606">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="274" y="43" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1581325564606" />
+    <state x="549" y="172" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1581325553517">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="549" y="172" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.768@0.0.1366.768" timestamp="1581325553517" />
+    <state width="1323" height="283" key="GridCell.Tab.0.bottom" timestamp="1581333401927">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="283" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1581333401927" />
+    <state width="1323" height="283" key="GridCell.Tab.0.center" timestamp="1581333401927">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="283" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1581333401927" />
+    <state width="1323" height="283" key="GridCell.Tab.0.left" timestamp="1581333401927">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="283" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1581333401927" />
+    <state width="1323" height="283" key="GridCell.Tab.0.right" timestamp="1581333401927">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="283" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1581333401927" />
+    <state x="184" y="27" key="SettingsEditor" timestamp="1581331703507">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="184" y="27" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1581331703507" />
+    <state x="391" y="10" key="refactoring.ChangeSignatureDialog" timestamp="1581333715915">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="391" y="10" key="refactoring.ChangeSignatureDialog/0.0.1366.768@0.0.1366.768" timestamp="1581333715915" />
+    <state x="159" y="57" width="670" height="676" key="search.everywhere.popup" timestamp="1581330865729">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="159" y="57" width="670" height="676" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1581330865729" />
+  </component>
+</project>
