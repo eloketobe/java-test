@@ -6,6 +6,9 @@ public class TestClass {
     private static final int SELF_EMPLOYED_VALUE = 2;
     private static final int RESTART_VALUE = 1;
     private static final int QUIT_VALUE = 2;
+    private static final int ERROR_CHECKING_VALUE = 1;
+    private static final int LOOP_COUNTER_VALUE = 1;
+
     public static void main(String[] args) {
         int restartChoice;
         do {
@@ -16,13 +19,36 @@ public class TestClass {
             printFirstName(name);
 
             //age input section
-            System.out.println("Enter your age");
-            int age = read.nextInt();
+
+            int age = 0, errorChecker = ERROR_CHECKING_VALUE, loopCounter = LOOP_COUNTER_VALUE;
+
+            outer:
+            do {
+                try {
+                    System.out.println("Enter your age");
+                    if (loopCounter > 1) {
+                        read.nextLine();
+                    }
+                    age = read.nextInt();
+                    if (age < 1) {
+                        System.out.println("Your input must be greater then zero");
+                        continue outer;
+                    }
+                    errorChecker++;
+                } catch (InputMismatchException exception2) {
+                    System.out.println("Please input a valid integer");
+                    loopCounter++;
+                }
+            } while (errorChecker == ERROR_CHECKING_VALUE);
+            read.nextLine();
+
+            checkAgeRange(age);
+
             int ans;
 
             //proffesion input section
             do {
-                System.out.println("Are you Self employed or employed?\nEnter " +EMPLOYED_VALUE+" for employed and " +SELF_EMPLOYED_VALUE+" for self employed");
+                System.out.println("Are you Self employed or employed?\nEnter " + EMPLOYED_VALUE + " for employed and " + SELF_EMPLOYED_VALUE + " for self employed");
                 ans = read.nextInt();
             } while (getProfession(ans).equals("again"));
             String prof = getProfession(ans);
@@ -37,7 +63,7 @@ public class TestClass {
 
 
             do {
-                System.out.println("Restart or Quit? \nEnter " +RESTART_VALUE+ " to Restart and "  +QUIT_VALUE+ " to Quit");
+                System.out.println("Restart or Quit? \nEnter " + RESTART_VALUE + " to Restart and " + QUIT_VALUE + " to Quit");
                 restartChoice = read.nextInt();
                 if (restartChoice != RESTART_VALUE && restartChoice != QUIT_VALUE)
                     System.out.println("Invalid input, try again");
@@ -46,7 +72,7 @@ public class TestClass {
         } while (restartChoice == 1);
         System.out.println("Good bye");
     }
-    
+
     //5 seconds delay method
     private static void waitFor5Secs() {
         try {
@@ -76,5 +102,17 @@ public class TestClass {
 
     }
 
+    private static void checkAgeRange(int ageInput) {
+
+        if (ageInput <= 11) {
+            System.out.println("You are an adolescent");
+        } else if (ageInput <= 19) {
+            System.out.println("You are a teenager");
+        } else if (ageInput <= 30) {
+            System.out.println("You are a young adult");
+        } else if (ageInput > 30) {
+            System.out.println("You are an adult");
+        }
+    }
 
 }
