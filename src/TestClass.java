@@ -8,70 +8,94 @@ public class TestClass {
     private static final int QUIT_VALUE = 2;
     private static final int ERROR_CHECKING_VALUE = 1;
     private static final int LOOP_COUNTER_VALUE = 1;
+    private static int restartChoice = RESTART_VALUE;
+
 
     public static void main(String[] args) {
-        int restartChoice;
+        //Initialized so it can satisfy the while loop at the first run
+
+
+        //Changed it to a while loop for better readability
+        while (restartChoice == RESTART_VALUE) {
+            runProgram();
+        }
+
+        // This only runs if the while loop is exited
+        quitProgram();
+
+
+    }
+
+
+    private static void runProgram( ) {
+
+        Scanner read = new Scanner(System.in);
+
+
+        //name input section
+        System.out.println("Enter your first and last names");
+        String name = read.nextLine();
+        printFirstName(name);
+
+        //age input section
+
+        int age = 0, errorChecker = ERROR_CHECKING_VALUE, loopCounter = LOOP_COUNTER_VALUE;
+
+        outer:
         do {
-            Scanner read = new Scanner(System.in);
-            //name input section
-            System.out.println("Enter your first and last names");
-            String name = read.nextLine();
-            printFirstName(name);
-
-            //age input section
-
-            int age = 0, errorChecker = ERROR_CHECKING_VALUE, loopCounter = LOOP_COUNTER_VALUE;
-
-            outer:
-            do {
-                try {
-                    System.out.println("Enter your age");
-                    if (loopCounter > 1) {
-                        read.nextLine();
-                    }
-                    age = read.nextInt();
-                    if (age < 1) {
-                        System.out.println("Your input must be greater then zero");
-                        continue outer;
-                    }
-                    errorChecker++;
-                } catch (InputMismatchException exception2) {
-                    System.out.println("Please input a valid integer");
-                    loopCounter++;
+            try {
+                System.out.println("Enter your age");
+                if (loopCounter > 1) {
+                    read.nextLine();
                 }
-            } while (errorChecker == ERROR_CHECKING_VALUE);
-            read.nextLine();
+                age = read.nextInt();
+                if (age < 1) {
+                    System.out.println("Your input must be greater then zero");
+                    continue outer;
+                }
+                errorChecker++;
+            } catch (InputMismatchException exception2) {
+                System.out.println("Please input a valid integer");
+                loopCounter++;
+            }
+        } while (errorChecker == ERROR_CHECKING_VALUE);
+        read.nextLine();
 
-            checkAgeRange(age);
+        checkAgeRange(age);
 
-            int ans;
+        int ans;
 
-            //proffesion input section
-            do {
-                System.out.println("Are you Self employed or employed?\nEnter " + EMPLOYED_VALUE + " for employed and " + SELF_EMPLOYED_VALUE + " for self employed");
-                ans = read.nextInt();
-            } while (getProfession(ans).equals("again"));
-            String prof = getProfession(ans);
+        //proffesion input section
+        do {
+            System.out.println("Are you Self employed or employed?\nEnter " + EMPLOYED_VALUE + " for employed and " + SELF_EMPLOYED_VALUE + " for self employed");
+            ans = read.nextInt();
+        } while (getProfession(ans).equals("again"));
+        String prof = getProfession(ans);
 
-            System.out.println("Alright got it");
-            System.out.println("Scanning....");
+        System.out.println("Alright got it");
+        System.out.println("Scanning....");
 
-            //waiting for 5 seconds
-            waitFor5Secs();
-            //information output
-            System.out.println("To recap, your name is " + name + ", you are " + age + " years old and you are " + prof);
+        //waiting for 5 seconds
+        waitFor5Secs();
+        //information output
+        System.out.println("To recap, your name is " + name + ", you are " + age + " years old and you are " + prof);
 
 
-            do {
-                System.out.println("Restart or Quit? \nEnter " + RESTART_VALUE + " to Restart and " + QUIT_VALUE + " to Quit");
-                restartChoice = read.nextInt();
-                if (restartChoice != RESTART_VALUE && restartChoice != QUIT_VALUE)
-                    System.out.println("Invalid input, try again");
+        System.out.println("Restart or Quit? \nEnter " + RESTART_VALUE + " to Restart and " + QUIT_VALUE + " to Quit");
+        restartChoice = read.nextInt();
+        if (restartChoice != RESTART_VALUE && restartChoice != QUIT_VALUE) {
+            System.out.println("Invalid input, try again");
+        } else {
+            return;
+        }
 
-            } while (restartChoice != 1 && restartChoice != 2);
-        } while (restartChoice == 1);
+
+    }
+
+    public static void quitProgram() {
         System.out.println("Good bye");
     }
+
 
     //5 seconds delay method
     private static void waitFor5Secs() {
