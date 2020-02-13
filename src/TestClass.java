@@ -9,7 +9,7 @@ public class TestClass {
     private static final int ERROR_CHECKING_VALUE = 1;
     private static final int LOOP_COUNTER_VALUE = 1;
     private static int restartChoice;
-
+    private static Scanner read =  new Scanner(System.in);
 
     public static void main(String[] args) {
         //Initialized so it can satisfy the while loop at the first run
@@ -29,9 +29,6 @@ public class TestClass {
 
 
     private static void runProgram() {
-
-        Scanner read = new Scanner(System.in);
-
 
         //name input section
         System.out.println("Enter your first and last names");
