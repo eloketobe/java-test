@@ -8,11 +8,14 @@ public class TestClass {
     private static final int QUIT_VALUE = 2;
     private static final int ERROR_CHECKING_VALUE = 1;
     private static final int LOOP_COUNTER_VALUE = 1;
-    private static int restartChoice = RESTART_VALUE;
+    private static int restartChoice;
+
+
 
 
     public static void main(String[] args) {
         //Initialized so it can satisfy the while loop at the first run
+        restartChoice = RESTART_VALUE;
 
 
         //Changed it to a while loop for better readability
