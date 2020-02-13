@@ -11,8 +11,6 @@ public class TestClass {
     private static int restartChoice;
 
 
-
-
     public static void main(String[] args) {
         //Initialized so it can satisfy the while loop at the first run
         restartChoice = RESTART_VALUE;
@@ -30,7 +28,7 @@ public class TestClass {
     }
 
 
-    private static void runProgram( ) {
+    private static void runProgram() {
 
         Scanner read = new Scanner(System.in);
 
@@ -83,14 +81,32 @@ public class TestClass {
         //information output
         System.out.println("To recap, your name is " + name + ", you are " + age + " years old and you are " + prof);
 
+        boolean restartValueIsValid;
 
-        System.out.println("Restart or Quit? \nEnter " + RESTART_VALUE + " to Restart and " + QUIT_VALUE + " to Quit");
-        restartChoice = read.nextInt();
-        if (restartChoice != RESTART_VALUE && restartChoice != QUIT_VALUE) {
-            System.out.println("Invalid input, try again");
-        } else {
-            return;
-        }
+
+        do {
+            System.out.println("Restart or Quit? \nEnter " + RESTART_VALUE + " to Restart and " + QUIT_VALUE + " to Quit");
+            try {
+                restartChoice = read.nextInt();
+                if (restartChoice != RESTART_VALUE && restartChoice != QUIT_VALUE) {
+                    System.out.println("Invalid input, try again");
+                    restartValueIsValid = false;
+
+                } else {
+                    restartValueIsValid = true;
+
+                }
+
+
+            } catch (Exception exception) {
+                System.out.println("Invalid input, try again");
+                read.nextLine();
+
+                restartValueIsValid = false;
+
+            }
+
+        } while (!restartValueIsValid);
 
 
     }
