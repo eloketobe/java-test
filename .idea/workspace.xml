@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1fbb569-eb05-4fc3-8a93-18e97013a259" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TestProject/TestClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TestProject/TestClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestClass.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,18 +44,6 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="TestApp" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="TestClass" />
@@ -86,7 +75,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -101,22 +92,22 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="549" y="172" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.768@0.0.1366.768" timestamp="1581325553517" />
-    <state width="1323" height="133" key="GridCell.Tab.0.bottom" timestamp="1581508914683">
+    <state width="1323" height="195" key="GridCell.Tab.0.bottom" timestamp="1581611752940">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="133" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1581508914683" />
-    <state width="1323" height="133" key="GridCell.Tab.0.center" timestamp="1581508914682">
+    <state width="1323" height="195" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1581611752940" />
+    <state width="1323" height="195" key="GridCell.Tab.0.center" timestamp="1581611752940">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="133" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1581508914682" />
-    <state width="1323" height="133" key="GridCell.Tab.0.left" timestamp="1581508914682">
+    <state width="1323" height="195" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1581611752940" />
+    <state width="1323" height="195" key="GridCell.Tab.0.left" timestamp="1581611752940">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="133" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1581508914682" />
-    <state width="1323" height="133" key="GridCell.Tab.0.right" timestamp="1581508914683">
+    <state width="1323" height="195" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1581611752940" />
+    <state width="1323" height="195" key="GridCell.Tab.0.right" timestamp="1581611752940">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="133" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1581508914683" />
+    <state width="1323" height="195" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1581611752940" />
     <state x="184" y="27" key="SettingsEditor" timestamp="1581435243158">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

@@ -2,14 +2,14 @@ import java.util.*;
 
 
 public class TestClass {
+    private static final int RESTART_OPTION = 1;
+    private static final int EMPLOYMENT_OPTION = 2;
     private static final int EMPLOYED_VALUE = 1;
     private static final int SELF_EMPLOYED_VALUE = 2;
     private static final int RESTART_VALUE = 1;
     private static final int QUIT_VALUE = 2;
-    private static final int ERROR_CHECKING_VALUE = 1;
-    private static final int LOOP_COUNTER_VALUE = 1;
     private static int restartChoice;
-    private static Scanner read =  new Scanner(System.in);
+    private static Scanner read = new Scanner(System.in);
 
     public static void main(String[] args) {
         //Initialized so it can satisfy the while loop at the first run
@@ -37,38 +37,15 @@ public class TestClass {
 
         //age input section
 
-        int age = 0, errorChecker = ERROR_CHECKING_VALUE, loopCounter = LOOP_COUNTER_VALUE;
-
-        outer:
-        do {
-            try {
-                System.out.println("Enter your age");
-                if (loopCounter > 1) {
-                    read.nextLine();
-                }
-                age = read.nextInt();
-                if (age < 1) {
-                    System.out.println("Your input must be greater then zero");
-                    continue outer;
-                }
-                errorChecker++;
-            } catch (InputMismatchException exception2) {
-                System.out.println("Please input a valid integer");
-                loopCounter++;
-            }
-        } while (errorChecker == ERROR_CHECKING_VALUE);
-        read.nextLine();
-
+        int age = 0;
+        String promptMessage = "Enter your age";
+        age = checkForInputtedInteger(age, promptMessage);
         checkAgeRange(age);
 
-        int ans;
-
-        //proffesion input section
-        do {
-            System.out.println("Are you Self employed or employed?\nEnter " + EMPLOYED_VALUE + " for employed and " + SELF_EMPLOYED_VALUE + " for self employed");
-            ans = read.nextInt();
-        } while (getProfession(ans).equals("again"));
-        String prof = getProfession(ans);
+        int ans = 0;
+        promptMessage = "Are you Self employed or employed?\nEnter " + EMPLOYED_VALUE + " for employed and " + SELF_EMPLOYED_VALUE + " for self employed";
+        ans = checkForInputtedInteger(ans, promptMessage, EMPLOYMENT_OPTION);
+        String profession = getProfession(ans);
 
         System.out.println("Alright got it");
         System.out.println("Scanning....");
@@ -76,35 +53,11 @@ public class TestClass {
         //waiting for 5 seconds
         waitFor5Secs();
         //information output
-        System.out.println("To recap, your name is " + name + ", you are " + age + " years old and you are " + prof);
-
-        boolean restartValueIsValid;
+        System.out.println("To recap, your name is " + name + ", you are " + age + " years old and you are " + profession);
 
 
-        do {
-            System.out.println("Restart or Quit? \nEnter " + RESTART_VALUE + " to Restart and " + QUIT_VALUE + " to Quit");
-            try {
-                restartChoice = read.nextInt();
-                if (restartChoice != RESTART_VALUE && restartChoice != QUIT_VALUE) {
-                    System.out.println("Invalid input, try again");
-                    restartValueIsValid = false;
-
-                } else {
-                    restartValueIsValid = true;
-
-                }
-
-
-            } catch (Exception exception) {
-                System.out.println("Invalid input, try again");
-                read.nextLine();
-
-                restartValueIsValid = false;
-
-            }
-
-        } while (!restartValueIsValid);
-
+        promptMessage = "Restart or Quit? \nEnter " + RESTART_VALUE + " to Restart and " + QUIT_VALUE + " to Quit";
+        restartChoice = checkForInputtedInteger(restartChoice, promptMessage, RESTART_OPTION);
 
     }
 
@@ -154,5 +107,78 @@ public class TestClass {
             System.out.println("You are an adult");
         }
     }
+
+    private static int checkForInputtedInteger(int requiredInput, String requiredPromptMessage, int inputOption) {
+        boolean requiredInputIsValid = false;
+
+
+        outer:
+        do {
+            System.out.println(requiredPromptMessage);
+            try {
+
+                requiredInput = read.nextInt();
+                //requiredInputIsValid = true;
+                if (inputOption == EMPLOYMENT_OPTION) {
+                    if (requiredInput != EMPLOYED_VALUE && requiredInput != SELF_EMPLOYED_VALUE) {
+                        System.out.println("Invalid input, try again");
+                        continue outer;
+                    } else {
+
+                        read.nextLine();
+
+                    }
+                    requiredInputIsValid = true;
+                } else if (inputOption == RESTART_OPTION) {
+                    if (requiredInput != RESTART_VALUE && requiredInput != QUIT_VALUE) {
+                        System.out.println("Invalid input, try again");
+                        continue outer;
+                    } else {
+
+                        read.nextLine();
+
+                    }
+                    requiredInputIsValid = true;
+                }
+
+
+            } catch (InputMismatchException exception) {
+                System.out.println("Invalid Input, try again");
+                read.nextLine();
+                requiredInputIsValid = false;
+            }
+        } while (!requiredInputIsValid);
+
+//        while (getProfession(requiredInput).equals("again"));
+        return requiredInput;
+
+    }
+
+    private static int checkForInputtedInteger(int requiredInput, String requiredPromptMessage) {
+        boolean requiredInputIsValid;
+
+        do {
+            System.out.println(requiredPromptMessage);
+            try {
+
+                requiredInput = read.nextInt();
+                requiredInputIsValid = true;
+                if (requiredInput < 1) {
+                    System.out.println("Your input must be greater then zero");
+                    requiredInputIsValid = false;
+
+                }
+            } catch (InputMismatchException exception) {
+                System.out.println("Invalid Input, try again");
+                read.nextLine();
+                requiredInputIsValid = false;
+            }
+        } while (!requiredInputIsValid);
+        return requiredInput;
+
+//        while (getProfession(requiredInput).equals("again"));
+
+    }
+
 
 }
